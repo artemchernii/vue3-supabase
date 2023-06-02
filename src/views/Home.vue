@@ -1,19 +1,21 @@
 <template>
-    <div></div>
+  <div>
+    <h1>Home</h1>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Home',
-    components: {},
-    setup() {
-        // Create data / vars
+  name: "Home",
+  components: {},
+  setup() {
+    // Create data / vars
 
-        // Get data
+    // Get data
 
-        // Run data function
+    // Run data function
 
-        return {};
-    },
+    return {};
+  }
 };
 </script>
