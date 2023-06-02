@@ -56,16 +56,16 @@ import { useRouter } from "vue-router";
 export default {
   name: "login",
   setup() {
+    // Router init
+    const router = useRouter();
     // Create data / vars
     const email = ref(null);
     const password = ref(null);
     const errorMsg = ref(null);
     // Login function
-    const router = useRouter();
-
     const login = async () => {
       try {
-        const { data, error } = await supabase.auth.signIn({
+        const { error } = await supabase.auth.signIn({
           email: email.value,
           password: password.value
         });
