@@ -68,14 +68,14 @@ import { useRouter } from "vue-router";
 export default {
   name: "register",
   setup() {
+    // router
+    const router = useRouter();
     // Create data / vars
     const email = ref(null);
     const password = ref(null);
     const confirmPassword = ref(null);
     const errorMsg = ref(null);
     // Register function
-    const router = useRouter();
-
     const register = async () => {
       if (password.value === confirmPassword.value) {
         try {
