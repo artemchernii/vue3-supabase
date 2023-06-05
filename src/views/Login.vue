@@ -24,15 +24,15 @@
         />
       </div>
       <div class="flex flex-col mb-2">
-        <label for="password" class="mb-1 text-sm text-at-light-green "
+        <label for="current-password" class="mb-1 text-sm text-at-light-green "
           >Password</label
         >
         <input
           type="password"
           required
           class="p-2 text-gray-500 focus:outline-none"
-          id="password"
-          v-model="password"
+          id="current-password"
+          v-model="currentPassword"
         />
       </div>
       <button
@@ -60,14 +60,14 @@ export default {
     const router = useRouter();
     // Create data / vars
     const email = ref(null);
-    const password = ref(null);
+    const currentPassword = ref(null);
     const errorMsg = ref(null);
     // Login function
     const login = async () => {
       try {
         const { error } = await supabase.auth.signIn({
           email: email.value,
-          password: password.value
+          password: currentPassword.value
         });
         if (error) throw error;
         router.push({ name: "Home" });
@@ -81,7 +81,7 @@ export default {
 
     return {
       email,
-      password,
+      currentPassword,
       errorMsg,
       login
     };
